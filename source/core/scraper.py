@@ -130,7 +130,8 @@ class OpenFoodFactsScraper:
                             alergenos,
                             nutricion,
                             origen,
-                            url_completa
+                            url_completa,
+                            nombre_categoria
                         ])
                     
                     except Exception as e:
@@ -154,7 +155,8 @@ class OpenFoodFactsScraper:
                 "Alergenos",
                 "Nutricion",
                 "Origen",
-                "URL"
+                "URL",
+                "Categoria"
             ])
             writer.writerows(self.rows)
         print(f"\n[✔] CSV completo generado y guardado correctamente en {config.CSV_FILENAME}")
