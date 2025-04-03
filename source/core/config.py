@@ -18,11 +18,14 @@ BASE_URL = "https://es.openfoodfacts.org"
 CATEGORIAS_URL = BASE_URL + "/facets/categorias"
 
 # Output
-OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'output')
+BASE_DIR = os.path.join(os.path.dirname(__file__))
+CSV_DIR =  os.path.abspath(os.path.join(BASE_DIR, '..', '..', 'dataset'))
+LOG_DIR =  os.path.abspath(os.path.join(BASE_DIR, '..', 'output'))
 
-# Asegurar que existe el directotio output
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+# Asegurar que existen directorios dataset y output
+os.makedirs(CSV_DIR, exist_ok=True)
+os.makedirs(LOG_DIR, exist_ok=True)
 
 # Paths
-CSV_FILENAME = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'output', 'scraped_products.csv'))
-LOG_FILENAME = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'output', 'errores.log'))
+CSV_FILENAME = os.path.join(CSV_DIR, 'scraped_products.csv')
+LOG_FILENAME = os.path.join(LOG_DIR, 'errores.log')
